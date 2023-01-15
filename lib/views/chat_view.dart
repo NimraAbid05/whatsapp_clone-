@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/CustomUI/customcard.dart';
+import 'package:whatsapp_clone/Model/chatmodel.dart';
 
 class Chat_View extends StatefulWidget {
   const Chat_View({super.key});
@@ -8,6 +10,10 @@ class Chat_View extends StatefulWidget {
 }
 
 class _Chat_ViewState extends State<Chat_View> {
+  List<ChatModel> chats = [
+    ChatModel(name: "Nimra", icon: "person.png", isGroup: false, time: "11:00 PM", currentmessage: "hi,"),
+
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,6 +47,10 @@ class _Chat_ViewState extends State<Chat_View> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.chat),
+      ),
+      body: ListView.builder(
+      itemCount: chats.length,
+      itemBuilder: (context, index) => CustomCard(chatModel: chats[index]),
       ),
     );
   }
