@@ -11,8 +11,18 @@ class Chat_View extends StatefulWidget {
 
 class _Chat_ViewState extends State<Chat_View> {
   List<ChatModel> chats = [
-    ChatModel(name: "Nimra", icon: "person.png", isGroup: false, time: "11:00 PM", currentmessage: "hi,"),
-
+    ChatModel(
+        name: "Nimra",
+        icon: "person.png",
+        isGroup: false,
+        time: "11:00 PM",
+        currentmessage: "hi,"),
+    ChatModel(
+        name: "Friends Forever",
+        icon: "group.png",
+        isGroup: true,
+        time: "Yesterday",
+        currentmessage: "hello everyone"),
   ];
   @override
   Widget build(BuildContext context) {
@@ -49,8 +59,8 @@ class _Chat_ViewState extends State<Chat_View> {
         child: Icon(Icons.chat),
       ),
       body: ListView.builder(
-      itemCount: chats.length,
-      itemBuilder: (context, index) => CustomCard(chatModel: chats[index]),
+        itemCount: chats.length,
+        itemBuilder: (context, index) => CustomCard(chatModel: chats[index]),
       ),
     );
   }

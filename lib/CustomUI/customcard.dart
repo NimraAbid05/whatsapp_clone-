@@ -10,7 +10,7 @@ class CustomCard extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => IndividualPage()));
+            context, MaterialPageRoute(builder: (context) => IndividualPage(chatModel:chatModel,)));
       },
       child: Column(
         children: [
@@ -18,7 +18,7 @@ class CustomCard extends StatelessWidget {
               leading: CircleAvatar(
                 radius: 30,
                 child: Image.asset(
-                  chatModel.isGroup ? "assets/images/group.png":"assets/images/group.png",
+                  chatModel.isGroup ? "images/group.png":"images/person.png",
                   color: Colors.white,
                   height: 30,
                   width: 30,
