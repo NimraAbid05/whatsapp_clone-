@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/views/camerascreen.dart';
 
 class Status_View extends StatefulWidget {
   const Status_View({super.key});
@@ -11,26 +12,15 @@ class _Status_ViewState extends State<Status_View> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //     appBar: AppBar(
-        //   actions: [
-        //     PopupMenuButton(itemBuilder: (BuildContext context) {
-        //       return [
-        //         PopupMenuItem(
-        //           child: Text("Status privacy"),
-        //           value: ("Status privacy"),
-        //         ),
-        //         PopupMenuItem(
-        //           child: Text("Settings"),
-        //           value: ("Settings"),
-        //         ),
-        //       ];
-        //     }),
-        //   ],
-        // ));
-        floatingActionButton: FloatingActionButton(onPressed: (() {
-          
+      
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => Camera_Screen()));
         }),
-        child: Icon(Icons.camera_alt),),
-        );
+        child: Icon(Icons.camera_alt),
+      ),
+      
+    );
   }
 }

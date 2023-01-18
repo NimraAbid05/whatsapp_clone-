@@ -5,7 +5,7 @@ List<CameraDescription> cameras = cameras;
 
 class Camera_Screen extends StatefulWidget {
   const Camera_Screen({super.key});
-
+                                                       
   @override
   State<Camera_Screen> createState() => _Camera_ScreenState();
 }
@@ -36,10 +36,11 @@ class _Camera_ScreenState extends State<Camera_Screen> {
                 }
               }),
           Positioned(
-            bottom: 0.0,
+            bottom: 0,
             child: Container(
               color: Colors.black,
-              padding: EdgeInsets.only(bottom: 5, top: 5),
+
+              // padding: EdgeInsets.only(bottom: 5, top: 5),
               width: MediaQuery.of(context).size.width,
               child: Column(
                 children: [
@@ -71,9 +72,9 @@ class _Camera_ScreenState extends State<Camera_Screen> {
                       ),
                     ],
                   ),
-                  // SizedBox(
-                  //   height: 4,
-                  // ),
+                  SizedBox(
+                    height: 4,
+                  ),
                   Text(
                     "Hold for Video,tap for photo",
                     style: TextStyle(

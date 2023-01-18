@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/views/calls_view.dart';
-import 'package:whatsapp_clone/views/camerapage.dart';
+import 'package:whatsapp_clone/views/camerascreen.dart';
 import 'package:whatsapp_clone/views/chat_view.dart';
 import 'package:whatsapp_clone/views/status_view.dart';
 
@@ -27,7 +27,10 @@ class _Home_ViewState extends State<Home_View>
         title: Text("WhatsApp Clone"),
         actions: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => Camera_Screen()));
+            },
             icon: Icon(Icons.camera_alt),
           ),
           IconButton(
@@ -71,10 +74,8 @@ class _Home_ViewState extends State<Home_View>
           ],
         ),
       ),
-      body: TabBarView(
-        controller: _controller,
-        children: [
-        Camera_Screen(),
+      body: TabBarView(controller: _controller, children: [
+     Text("Community"),
         Chat_View(),
         Status_View(),
         Calls_View(),

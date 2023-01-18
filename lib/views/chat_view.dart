@@ -12,6 +12,12 @@ class Chat_View extends StatefulWidget {
 class _Chat_ViewState extends State<Chat_View> {
   List<ChatModel> chats = [
     ChatModel(
+        name: "Hira",
+        icon: "person.png",
+        isGroup: false,
+        time: "12:34 PM ",
+        currentmessage: "Good afternoon!"),
+    ChatModel(
         name: "Nimra",
         icon: "person.png",
         isGroup: false,
@@ -23,37 +29,12 @@ class _Chat_ViewState extends State<Chat_View> {
         isGroup: true,
         time: "Yesterday",
         currentmessage: "hello everyone"),
+    
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   actions: [
-      //     PopupMenuButton(itemBuilder: (BuildContext context) {
-      //       return [
-      //         PopupMenuItem(
-      //           child: Text("New group"),
-      //           value: ("New group"),
-      //         ),
-      //         PopupMenuItem(
-      //           child: Text("New broadcast"),
-      //           value: ("New broadcast"),
-      //         ),
-      //         PopupMenuItem(
-      //           child: Text("Linked device"),
-      //           value: ("Linked device"),
-      //         ),
-      //         PopupMenuItem(
-      //           child: Text("Starred messages"),
-      //           value: ("Starred messages"),
-      //         ),
-      //         PopupMenuItem(
-      //           child: Text("Settings"),
-      //           value: ("Settings"),
-      //         ),
-      //       ];
-      //     })
-      //   ],
+      
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: Icon(Icons.chat),

@@ -1,6 +1,6 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:whatsapp_clone/views/camerapage.dart';
+import 'package:whatsapp_clone/views/camerascreen.dart';
 import 'package:whatsapp_clone/views/chat_view.dart';
 import 'package:whatsapp_clone/views/home_view.dart';
 

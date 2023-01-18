@@ -1,6 +1,7 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Model/chatmodel.dart';
+import 'package:whatsapp_clone/views/camerascreen.dart';
 
 class IndividualPage extends StatefulWidget {
   const IndividualPage({super.key, required this.chatModel});
@@ -168,7 +169,13 @@ class _IndividualPageState extends State<IndividualPage> {
                                         icon: Icon(Icons.attach_file),
                                       ),
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      Camera_Screen()));
+                                        },
                                         icon: Icon(Icons.camera_alt),
                                       ),
                                     ],
@@ -231,13 +238,20 @@ class _IndividualPageState extends State<IndividualPage> {
                   SizedBox(
                     width: 40,
                   ),
-                  iconcreation(
-                      Icons.camera_alt, Colors.pink, "Camera"),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Camera_Screen()));
+                    },
+                    child:
+                        iconcreation(Icons.camera_alt, Colors.pink, "Camera"),
+                  ),
                   SizedBox(
                     width: 40,
                   ),
-                  iconcreation(
-                      Icons.insert_photo, Colors.purple, "Gallery"),
+                  iconcreation(Icons.insert_photo, Colors.purple, "Gallery"),
                   SizedBox(
                     width: 40,
                   ),
@@ -248,20 +262,16 @@ class _IndividualPageState extends State<IndividualPage> {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-               
                 children: [
-                  iconcreation(
-                      Icons.audio_file, Colors.deepOrange, "Audio"),
+                  iconcreation(Icons.audio_file, Colors.deepOrange, "Audio"),
                   SizedBox(
                     width: 40,
                   ),
-                  iconcreation(
-                      Icons.location_pin, Colors.green, "Location"),
+                  iconcreation(Icons.location_pin, Colors.green, "Location"),
                   SizedBox(
                     width: 40,
                   ),
-                  iconcreation(
-                      Icons.person, Colors.blue, "Contact"),
+                  iconcreation(Icons.person, Colors.blue, "Contact"),
                   SizedBox(
                     width: 40,
                   ),
@@ -288,28 +298,25 @@ class _IndividualPageState extends State<IndividualPage> {
 
 //method for icons
   Widget iconcreation(IconData icon, Color color, String text) {
-    return InkWell(
-      onTap: (){},
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: color,
-            child: Icon(
-              icon,
-              size: 29,
-              color: Colors.white,
-            ),
+    return Column(
+      children: [
+        CircleAvatar(
+          radius: 30,
+          backgroundColor: color,
+          child: Icon(
+            icon,
+            size: 29,
+            color: Colors.white,
           ),
-          SizedBox(
-            height: 5,
-          ),
-          Text(
-            text,
-            style: TextStyle(fontSize: 12),
-          ),
-        ],
-      ),
+        ),
+        SizedBox(
+          height: 5,
+        ),
+        Text(
+          text,
+          style: TextStyle(fontSize: 12),
+        ),
+      ],
     );
   }
 
