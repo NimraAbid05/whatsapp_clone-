@@ -1,8 +1,12 @@
+import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:whatsapp_clone/views/camerapage.dart';
 import 'package:whatsapp_clone/views/chat_view.dart';
 import 'package:whatsapp_clone/views/home_view.dart';
 
-void main() {
+Future <void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  cameras =  await availableCameras();
   runApp(const MyApp());
 }
 
@@ -15,13 +19,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         // This is the theme of your application.
-      
-        primarySwatch: Colors.green,
+
+        primarySwatch: Colors.teal,
       ),
       home: Home_View(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
-
-

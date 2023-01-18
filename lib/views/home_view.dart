@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/views/calls_view.dart';
+import 'package:whatsapp_clone/views/camerapage.dart';
 import 'package:whatsapp_clone/views/chat_view.dart';
 import 'package:whatsapp_clone/views/status_view.dart';
 
@@ -73,7 +74,7 @@ class _Home_ViewState extends State<Home_View>
       body: TabBarView(
         controller: _controller,
         children: [
-        Text("Camera"),
+        Camera_Screen(),
         Chat_View(),
         Status_View(),
         Calls_View(),

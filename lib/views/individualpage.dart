@@ -1,5 +1,4 @@
 import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:whatsapp_clone/Model/chatmodel.dart';
 
@@ -160,7 +159,12 @@ class _IndividualPageState extends State<IndividualPage> {
                                     mainAxisSize: MainAxisSize.min,
                                     children: [
                                       IconButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          showModalBottomSheet(
+                                              context: context,
+                                              builder: (builder) =>
+                                                  bottomsheet());
+                                        },
                                         icon: Icon(Icons.attach_file),
                                       ),
                                       IconButton(
@@ -208,6 +212,107 @@ class _IndividualPageState extends State<IndividualPage> {
     );
   }
 
+//method for attachfile options
+  Widget bottomsheet() {
+    return Container(
+      height: 400,
+      width: MediaQuery.of(context).size.width,
+      child: Card(
+        margin: EdgeInsets.all(18),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  iconcreation(
+                      Icons.insert_drive_file, Colors.deepPurple, "Documents"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconcreation(
+                      Icons.camera_alt, Colors.pink, "Camera"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconcreation(
+                      Icons.insert_photo, Colors.purple, "Gallery"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+               
+                children: [
+                  iconcreation(
+                      Icons.audio_file, Colors.deepOrange, "Audio"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconcreation(
+                      Icons.location_pin, Colors.green, "Location"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                  iconcreation(
+                      Icons.person, Colors.blue, "Contact"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  iconcreation(Icons.poll, Colors.greenAccent, "Poll"),
+                  SizedBox(
+                    width: 40,
+                  ),
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+//method for icons
+  Widget iconcreation(IconData icon, Color color, String text) {
+    return InkWell(
+      onTap: (){},
+      child: Column(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            backgroundColor: color,
+            child: Icon(
+              icon,
+              size: 29,
+              color: Colors.white,
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            text,
+            style: TextStyle(fontSize: 12),
+          ),
+        ],
+      ),
+    );
+  }
+
 //method for emoji
 
   Widget selectEmoji() {
@@ -222,7 +327,6 @@ class _IndividualPageState extends State<IndividualPage> {
           columns: 7,
           verticalSpacing: 0,
           horizontalSpacing: 0,
-          
           bgColor: Color(0xFFF2F2F2),
           indicatorColor: Colors.green,
           iconColor: Colors.grey,
